@@ -34,7 +34,6 @@ export const NAV_ITEMS: NavItem[] = [
   { label: "Features", href: "#features" },
   { label: "For Parents", href: "#for-parents" },
   { label: "For Teens", href: "#for-teens" },
-  { label: "Testimonials", href: "#testimonials" },
 ];
 
 export const HERO_DATA = {

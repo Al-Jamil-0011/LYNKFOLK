@@ -4,10 +4,14 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Check, MessageSquare, Heart, Wind, Smile } from "lucide-react";
 import { APP_SHOWCASE_DATA } from "@/constants";
+import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function AppShowcase() {
   return (
-    <section className="py-24 bg-gradient-to-b from-grey-50 via-white to-white relative overflow-hidden">
+    <section
+      id="app-showcase"
+      className="py-24 md:py-32 bg-gradient-to-b from-grey-50 via-white to-white relative overflow-hidden scroll-mt-20"
+    >
       {/* Soft purple and blue ambient brand glow */}
       <div className="absolute top-1/3 right-10 h-[500px] w-[500px] rounded-full bg-primary-100/40 blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-1/2 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-100/50 blur-[100px] pointer-events-none -z-10" />
@@ -65,6 +69,20 @@ export function AppShowcase() {
                   </span>
                 </div>
               ))}
+            </motion.div>
+
+            {/* App Store & Google Play Store Badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-10 pt-6 border-t border-grey-100"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-grey-500 mb-3">
+                Download the app for iOS & Android
+              </p>
+              <StoreBadges className="gap-3.5" />
             </motion.div>
           </div>
 

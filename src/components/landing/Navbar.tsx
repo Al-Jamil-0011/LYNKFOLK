@@ -39,14 +39,23 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Primary CTA Button with soft purple glow */}
+        {/* Primary CTA Button: Download Now with smooth scroll to #app-showcase */}
         <div className="hidden md:flex items-center">
           <Link
-            href="#get-started"
-            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-primary-500 to-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/50 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
+            href="#app-showcase"
+            onClick={(e) => {
+              e.preventDefault();
+              const el = document.getElementById("app-showcase");
+              if (el) {
+                el.scrollIntoView({ behavior: "smooth" });
+              } else {
+                window.location.hash = "app-showcase";
+              }
+            }}
+            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
-            <span>Get Started</span>
-            <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
+            <span>Download Now</span>
+            <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         </div>
 
@@ -86,11 +95,20 @@ export function Navbar() {
             ))}
             <div className="pt-3">
               <Link
-                href="#get-started"
-                onClick={() => setMobileMenuOpen(false)}
-                className="flex items-center justify-center gap-2 w-full rounded-full bg-primary-500 py-3 text-sm font-semibold text-white shadow-md hover:bg-primary-600"
+                href="#app-showcase"
+                onClick={(e) => {
+                  e.preventDefault();
+                  setMobileMenuOpen(false);
+                  const el = document.getElementById("app-showcase");
+                  if (el) {
+                    el.scrollIntoView({ behavior: "smooth" });
+                  } else {
+                    window.location.hash = "app-showcase";
+                  }
+                }}
+                className="flex items-center justify-center gap-2 w-full rounded-full bg-primary-500 py-3 text-sm font-semibold text-white shadow-md hover:bg-primary-600 transition-colors"
               >
-                <span>Get Started</span>
+                <span>Download Now</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
