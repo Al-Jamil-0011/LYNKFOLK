@@ -10,24 +10,32 @@ export function AppShowcase() {
   return (
     <section
       id="app-showcase"
-      className="py-24 md:py-32 bg-gradient-to-b from-grey-50 via-white to-white relative overflow-hidden scroll-mt-20"
+      className="py-24 md:py-32 bg-[#FAF9F6] relative overflow-hidden scroll-mt-20"
     >
       {/* Soft purple and blue ambient brand glow */}
-      <div className="absolute top-1/3 right-10 h-[500px] w-[500px] rounded-full bg-primary-100/40 blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute top-1/2 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-100/50 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-1/3 right-10 h-[500px] w-[500px] rounded-full bg-primary-100/30 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-100/40 blur-[100px] pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
           {/* Left Column: Copy & Checklist */}
           <div className="lg:col-span-5">
+            {/* Playful cursive badge */}
+            <div className="inline-flex items-center gap-2 font-handwriting text-2xl text-primary-600 -rotate-3 mb-3">
+              <span>Small Steps Big Changes</span>
+              <span className="text-rose-400 text-xl">♡</span>
+            </div>
+
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4 }}
-              className="inline-flex items-center rounded-full bg-primary-50 px-3.5 py-1 text-xs font-semibold text-primary-600 border border-primary-100 mb-6"
+              className="block mb-4"
             >
-              <span>{APP_SHOWCASE_DATA.badge}</span>
+              <span className="inline-flex items-center rounded-full bg-primary-50 px-3.5 py-1 text-xs font-semibold text-primary-600 border border-primary-100">
+                {APP_SHOWCASE_DATA.badge}
+              </span>
             </motion.div>
 
             <motion.h2

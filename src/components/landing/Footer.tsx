@@ -6,10 +6,10 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function Footer() {
   return (
-    <footer className="border-t border-grey-100 bg-white py-12 sm:py-16">
+    <footer className="border-t border-grey-200/80 bg-[#FAF9F6] py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-grey-100">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-grey-200/70">
           {/* Brand Logo */}
           <div className="flex flex-col items-center md:items-start">
             <Logo />

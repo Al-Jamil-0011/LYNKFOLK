@@ -1,11 +1,11 @@
 import {
   Navbar,
   Hero,
+  FeaturesSummary,
   HowItWorks,
-  Features,
   AppShowcase,
-  TrustPrivacy,
-  ConversationsHighlight,
+  RolePillars,
+  StatsStrip,
   Testimonials,
   CTA,
   Footer,
@@ -13,15 +13,15 @@ import {
 
 export default function HomePage() {
   return (
-    <div className="flex min-h-screen flex-col bg-white">
+    <div className="flex min-h-screen flex-col bg-[#FAF9F6]">
       <Navbar />
       <main className="flex-1">
         <Hero />
+        <FeaturesSummary />
         <HowItWorks />
-        <Features />
         <AppShowcase />
-        <TrustPrivacy />
-        <ConversationsHighlight />
+        <RolePillars />
+        <StatsStrip />
         <Testimonials />
         <CTA />
       </main>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Lora } from "next/font/google";
+import { Plus_Jakarta_Sans, Lora, Caveat } from "next/font/google";
 import "./globals.css";
 import { SITE_CONFIG } from "@/constants";
 
@@ -11,6 +11,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 
 const lora = Lora({
   variable: "--font-serif",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const caveat = Caveat({
+  variable: "--font-handwriting",
   subsets: ["latin"],
   display: "swap",
 });
@@ -62,9 +68,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${plusJakartaSans.variable} ${lora.variable} scroll-smooth antialiased`}
+      className={`${plusJakartaSans.variable} ${lora.variable} ${caveat.variable} scroll-smooth antialiased`}
     >
-      <body className="min-h-screen flex flex-col bg-white text-zinc-900 font-sans selection:bg-[#8a2ce2] selection:text-white">
+      <body className="min-h-screen flex flex-col bg-[#FAF9F6] text-zinc-900 font-sans selection:bg-[#8a2ce2] selection:text-white">
         {children}
       </body>
     </html>

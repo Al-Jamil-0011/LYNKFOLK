@@ -3,6 +3,7 @@
 @theme {
   --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
   --font-serif: var(--font-serif), Georgia, serif;
+  --font-handwriting: var(--font-handwriting), "Caveat", cursive;
 
   --color-primary-50: #f3eafc;
   --color-primary-100: #dbbefe;
@@ -50,7 +51,7 @@
 }
 
 :root {
-  --background: #ffffff;
+  --background: #FAF9F6;
   --foreground: #101416;
 }
 
@@ -65,4 +66,8 @@ body {
 .font-serif-heading {
   font-family: var(--font-serif);
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+.font-handwriting {
+  font-family: var(--font-handwriting);
 }

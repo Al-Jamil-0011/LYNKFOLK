@@ -1,85 +1,104 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { HOW_IT_WORKS_DATA } from "@/constants";
+import { Smile, Sparkles, MessageCircle, Heart, ArrowRight, ChevronRight } from "lucide-react";
+
+const STEPS = [
+  {
+    num: "1. Check in",
+    desc: "Share mood, journal or engagement insights.",
+    icon: Smile,
+    color: "bg-purple-50 text-purple-600",
+  },
+  {
+    num: "2. Get Matched",
+    desc: "Our system finds the right module for your needs.",
+    icon: Sparkles,
+    color: "bg-secondary-50 text-secondary-600",
+  },
+  {
+    num: "3. Take Action",
+    desc: "Follow structured guidance, tools and conversation scripts.",
+    icon: MessageCircle,
+    color: "bg-sky-50 text-sky-600",
+  },
+  {
+    num: "4. Grow Together",
+    desc: "Build solid habits, stronger conversation and lasting bonds.",
+    icon: Heart,
+    color: "bg-rose-50 text-rose-600",
+  },
+];
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-24 bg-white relative">
+    <section id="how-it-works" className="py-20 sm:py-24 bg-[#FAF9F6] relative overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 tracking-tight"
-          >
-            <span className="text-primary-600 font-medium">How LYNKFOLK</span>{" "}
-            helps
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="mt-4 text-base sm:text-lg text-grey-500"
-          >
-            {HOW_IT_WORKS_DATA.subtitle}
-          </motion.p>
-        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          {/* Left Column: Heading, Description & Action */}
+          <div className="lg:col-span-4 flex flex-col items-start text-left">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary-600 bg-primary-50 px-3.5 py-1 rounded-full border border-primary-100 mb-4">
+              HOW IT WORKS
+            </span>
+            <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 tracking-tight leading-[1.15]">
+              How It Works
+            </h2>
+            <p className="mt-4 text-base leading-relaxed text-grey-600">
+              LYNKFOLK guides you through a structured routine with personalized support, tools, and meaningful conversations.
+            </p>
+            <div className="mt-6">
+              <Link
+                href="#features"
+                className="inline-flex items-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
+              >
+                <span>Learn more</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </div>
 
-        {/* 3 Pillar Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {HOW_IT_WORKS_DATA.pillars.map((pillar, idx) => (
-            <motion.div
-              key={pillar.id}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: idx * 0.12 }}
-              className="group flex flex-col justify-between rounded-3xl border border-grey-100 bg-white p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
-            >
-              <div>
-                {/* Circular Illustrated Avatar Header */}
-                <div className="relative mx-auto mb-8 h-40 w-40 overflow-hidden rounded-full border-4 border-white shadow-md">
-                  <Image
-                    src={pillar.image}
-                    alt={pillar.tag}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    sizes="160px"
-                  />
-                </div>
+          {/* Right Column: 4 Step Cards with Chevrons */}
+          <div className="lg:col-span-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 items-stretch">
+              {STEPS.map((step, idx) => {
+                const Icon = step.icon;
+                return (
+                  <motion.div
+                    key={step.num}
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.4, delay: idx * 0.1 }}
+                    className="relative rounded-3xl bg-white p-5 border border-grey-200/60 shadow-xs hover:shadow-md transition-all duration-300 flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className={`h-10 w-10 rounded-2xl flex items-center justify-center mb-4 ${step.color} shadow-2xs`}>
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <h3 className="font-bold text-sm text-grey-900 mb-1.5">
+                        {step.num}
+                      </h3>
+                      <p className="text-xs leading-relaxed text-grey-500">
+                        {step.desc}
+                      </p>
+                    </div>
 
-                {/* Tag & Subheading */}
-                <span className="inline-block text-xs font-bold uppercase tracking-wider text-primary-500 mb-2">
-                  {pillar.tag}
-                </span>
-                <h3 className="font-serif-heading text-xl sm:text-2xl font-semibold text-grey-900 mb-3">
-                  {pillar.subheading}
-                </h3>
-
-                {/* Description */}
-                <p className="text-sm leading-relaxed text-grey-600 mb-8">
-                  {pillar.description}
-                </p>
-              </div>
-
-              {/* Action Circle Button with Purple Accent */}
-              <div className="pt-2">
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary-50 text-primary-600 group-hover:bg-primary-500 group-hover:text-white transition-all shadow-xs group-hover:scale-110">
-                  <ArrowRight className="h-4 w-4" />
-                </div>
-              </div>
-            </motion.div>
-          ))}
+                    {/* Chevron connector between steps (desktop only) */}
+                    {idx < STEPS.length - 1 && (
+                      <div className="hidden xl:flex absolute -right-3 top-1/2 -translate-y-1/2 z-20 h-6 w-6 rounded-full bg-[#FAF9F6] border border-grey-200 items-center justify-center text-grey-400">
+                        <ChevronRight className="h-3.5 w-3.5" />
+                      </div>
+                    )}
+                  </motion.div>
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

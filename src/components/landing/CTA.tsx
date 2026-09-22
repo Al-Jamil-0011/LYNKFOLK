@@ -1,65 +1,120 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { FINAL_CTA_DATA } from "@/constants";
+import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function CTA() {
   return (
     <section
       id="get-started"
-      className="relative py-24 sm:py-32 bg-gradient-to-b from-primary-50/40 via-primary-50/70 to-primary-100/30 overflow-hidden"
+      className="py-16 sm:py-24 bg-[#FAF9F6] relative overflow-hidden"
     >
-      {/* Decorative botanical foliage flourishes on left & right */}
-      <div className="absolute -left-12 top-1/2 -translate-y-1/2 w-64 h-64 opacity-25 pointer-events-none text-primary-400">
-        <svg viewBox="0 0 200 200" fill="currentColor">
-          <path d="M40,100 C60,40 120,40 140,80 C150,100 130,140 90,140 C50,140 30,120 40,100 Z" />
-          <path d="M10,130 C30,70 90,70 110,110 C120,130 100,170 60,170 C20,170 0,150 10,130 Z" opacity="0.6" />
-        </svg>
-      </div>
-      <div className="absolute -right-12 top-1/2 -translate-y-1/2 w-64 h-64 opacity-25 pointer-events-none text-primary-400">
-        <svg viewBox="0 0 200 200" fill="currentColor">
-          <path d="M160,100 C140,40 80,40 60,80 C50,100 70,140 110,140 C150,140 170,120 160,100 Z" />
-          <path d="M190,130 C170,70 110,70 90,110 C80,130 100,170 140,170 C180,170 200,150 190,130 Z" opacity="0.6" />
-        </svg>
-      </div>
-
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        
+        {/* Scenic Container with Sunset Family Silhouette */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mx-auto max-w-3xl"
+          transition={{ duration: 0.7 }}
+          className="relative rounded-3xl sm:rounded-[44px] overflow-hidden min-h-[480px] sm:min-h-[540px] flex items-center justify-center p-8 sm:p-14 lg:p-20 text-center shadow-2xl border-4 border-white"
         >
-          {/* Badge */}
-          <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary-600 mb-4">
-            {FINAL_CTA_DATA.badge}
-          </span>
+          {/* Background Sunset Family Silhouette Image */}
+          <Image
+            src="/images/sunset-family.jpg"
+            alt="Family holding hands together at sunset during golden hour"
+            fill
+            priority
+            className="object-cover object-center transform scale-105"
+            sizes="(max-width: 1280px) 100vw, 1200px"
+          />
 
-          {/* Headline */}
-          <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 tracking-tight leading-[1.2]">
-            {FINAL_CTA_DATA.title}
-          </h2>
+          {/* Deep Twilight Purple to Golden Amber Gradient Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#180424]/95 via-[#2a0845]/80 to-[#180424]/65 pointer-events-none" />
+          <div className="absolute inset-0 bg-radial from-transparent via-[#200533]/40 to-[#12021a]/90 pointer-events-none" />
 
-          {/* Subtitle */}
-          <p className="mt-4 text-base sm:text-lg text-grey-600 font-medium">
-            {FINAL_CTA_DATA.subtitle}
-          </p>
-
-          {/* Center Pill Button */}
-          <div className="mt-8 flex justify-center">
-            <Link
-              href="#download"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-primary-500/25 hover:bg-primary-600 transition-all hover:scale-105 active:scale-95"
+          {/* Content Layer */}
+          <div className="relative z-10 mx-auto max-w-3xl flex flex-col items-center">
+            
+            {/* Rotated Handwriting Script Badge */}
+            <motion.div
+              initial={{ opacity: 0, rotate: -8, scale: 0.9 }}
+              whileInView={{ opacity: 1, rotate: -4, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="inline-flex items-center gap-2 font-handwriting text-2xl sm:text-3xl text-amber-300 drop-shadow-md mb-3"
             >
-              <span>{FINAL_CTA_DATA.buttonText}</span>
-              <ArrowRight className="h-5 w-5" />
-            </Link>
+              <span>Because they matter</span>
+              <span className="text-rose-400 text-xl sm:text-2xl">♡</span>
+            </motion.div>
+
+            {/* Pill Eyebrow */}
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.25 }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/90 border border-white/20 mb-6"
+            >
+              <Sparkles className="h-3 w-3 text-amber-300" />
+              <span>{FINAL_CTA_DATA.badge}</span>
+            </motion.div>
+
+            {/* Headline */}
+            <motion.h2
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight leading-[1.18]"
+            >
+              Ready to transform your <br className="hidden sm:inline" />
+              family communication?
+            </motion.h2>
+
+            {/* Sub-headline */}
+            <motion.p
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="mt-4 text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-2xl"
+            >
+              Join thousands of parents and teens building deeper connections, one honest conversation at a time.
+            </motion.p>
+
+            {/* CTAs: Button + Store Badges */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+            >
+              <Link
+                href="#download"
+                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-primary-500/40 hover:bg-primary-600 transition-all hover:scale-105 active:scale-95 border border-primary-400/40"
+              >
+                <span>{FINAL_CTA_DATA.buttonText}</span>
+                <ArrowRight className="h-5 w-5" />
+              </Link>
+
+              <StoreBadges variant="light" className="justify-center" />
+            </motion.div>
+
+            {/* Trust Micro-Text */}
+            <p className="mt-6 text-xs text-white/60 font-medium">
+              Free 14-day trial · No credit card required · End-to-end encrypted
+            </p>
+
           </div>
         </motion.div>
+
       </div>
     </section>
   );

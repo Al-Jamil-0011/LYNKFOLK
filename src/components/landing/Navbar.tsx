@@ -11,7 +11,7 @@ export function Navbar() {
   const [activeItem, setActiveItem] = useState("Home");
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white/90 backdrop-blur-xl border-b border-grey-100/80 transition-all duration-300">
+    <header className="sticky top-0 z-50 w-full bg-[#FAF9F6]/90 backdrop-blur-xl border-b border-grey-200/50 transition-all duration-300">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Logo with official vibrant infinity loop */}
         <Link href="#home" className="flex items-center group transition-opacity hover:opacity-95">
@@ -20,7 +20,13 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-          {NAV_ITEMS.map((item) => {
+          {[
+            { label: "Home", href: "#home" },
+            { label: "How It Works", href: "#how-it-works" },
+            { label: "For Parents", href: "#for-parents" },
+            { label: "For Teens", href: "#for-teens" },
+            { label: "Resources", href: "#features" },
+          ].map((item) => {
             const isActive = activeItem === item.label;
             return (
               <Link
@@ -39,22 +45,13 @@ export function Navbar() {
           })}
         </nav>
 
-        {/* Primary CTA Button: Download Now with smooth scroll to #app-showcase */}
+        {/* Primary CTA Button: Get Started with soft purple glow */}
         <div className="hidden md:flex items-center">
           <Link
-            href="#app-showcase"
-            onClick={(e) => {
-              e.preventDefault();
-              const el = document.getElementById("app-showcase");
-              if (el) {
-                el.scrollIntoView({ behavior: "smooth" });
-              } else {
-                window.location.hash = "app-showcase";
-              }
-            }}
-            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary-500/30 hover:shadow-lg hover:shadow-primary-500/50 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+            href="#get-started"
+            className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary-500/25 hover:shadow-lg hover:shadow-primary-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
           >
-            <span>Download Now</span>
+            <span>Get Started</span>
             <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-0.5" />
           </Link>
         </div>
