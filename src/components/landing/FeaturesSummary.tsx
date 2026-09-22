@@ -37,7 +37,7 @@ export function FeaturesSummary() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Soft Sage/Mint Framed Container */}
         <div className="relative rounded-[32px] sm:rounded-[40px] bg-[#F3F9F5] border border-emerald-100/60 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden shadow-xs">
-          
+
           {/* Decorative organic green fluid blob on the right edge */}
           <div className="absolute -top-10 -right-10 w-44 sm:w-56 h-44 sm:h-56 rounded-full bg-[#7be4a2]/40 blur-2xl pointer-events-none" />
           <div className="absolute top-1/2 -right-8 w-28 sm:w-36 h-28 sm:h-36 rounded-full bg-[#a8e6cf]/60 blur-xl pointer-events-none" />
@@ -53,7 +53,7 @@ export function FeaturesSummary() {
           {/* Section Header */}
           <div className="text-center max-w-xl mx-auto mb-8 sm:mb-10 relative z-10">
             <h2 className="font-serif-heading text-3xl sm:text-4xl font-normal text-grey-900 tracking-tight">
-              How <span className="text-primary-600 font-medium">LYNKFOLK</span> helps
+              Why <span>Families Need</span> <span className="text-primary-600 font-medium">LYNKFOLK</span>
             </h2>
           </div>
 
