@@ -20,16 +20,24 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#FAF9F6] scroll-mt-24"
+      className="relative overflow-hidden pt-8 pb-12 sm:pt-10 sm:pb-14 md:pt-12 md:pb-16 bg-gradient-to-b from-[#FFFDFB] via-[#FAF9F6] to-[#FAF9F6] rounded-b-[36px] sm:rounded-b-[48px] border-b border-grey-200/50 shadow-2xs scroll-mt-24"
     >
       <div id="home" className="absolute -top-24" />
       {/* Soft organic ambient glow blobs matching reference */}
-      <div className="absolute top-12 left-1/4 h-[480px] w-[480px] rounded-full bg-primary-100/30 blur-[110px] pointer-events-none -z-10" />
-      <div className="absolute top-24 right-10 h-[500px] w-[500px] rounded-full bg-[#FFE7D1]/40 blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute -bottom-10 left-6 h-[400px] w-[400px] rounded-full bg-[#E8F5E9]/50 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-8 left-1/4 h-[420px] w-[420px] rounded-full bg-primary-100/25 blur-[100px] pointer-events-none -z-10" />
+      <div className="absolute top-16 right-8 h-[450px] w-[450px] rounded-full bg-[#FFE7D1]/35 blur-[110px] pointer-events-none -z-10" />
+      <div className="absolute -bottom-8 left-4 h-[350px] w-[350px] rounded-full bg-[#E8F5E9]/40 blur-[90px] pointer-events-none -z-10" />
+
+      {/* Subtle organic bottom-left leaf flourish SVG */}
+      <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-6 w-16 sm:w-24 h-16 sm:h-24 opacity-25 pointer-events-none -z-10">
+        <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M20 80C30 50 60 40 85 25C70 55 55 75 20 80Z" fill="#a8e6cf" />
+          <path d="M20 80Q45 60 85 25" stroke="#4db6ac" strokeWidth="1.5" strokeLinecap="round" />
+        </svg>
+      </div>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 w-full">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 xl:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-10 xl:gap-12 items-center">
           {/* Left Column: Typography, Copy, Store Badges & Trust Card */}
           <div className="lg:col-span-6 flex flex-col items-start justify-center text-left z-10 animate-in fade-in slide-in-from-bottom-3 duration-700">
             {/* Pill Tag with subtle pulse */}

@@ -75,3 +75,26 @@ body {
 .font-handwriting {
   font-family: var(--font-handwriting);
 }
+
+/* Section Frame Utilities */
+.section-frame {
+  position: relative;
+  border-radius: 2.25rem;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .section-frame {
+    border-radius: 2.75rem;
+  }
+}
+
+/* Organic Fluid Blob Elements */
+.organic-blob {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+  transition: all 0.5s ease-in-out;
+}

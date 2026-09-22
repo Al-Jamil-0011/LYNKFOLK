@@ -43,17 +43,28 @@ const ROLE_PILLARS = [
 
 export function RolePillars() {
   return (
-    <section id="roles" className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
-      {/* Decorative organic blob matching reference on right side */}
-      <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-[40px] bg-emerald-200/40 blur-[80px] pointer-events-none -z-10" />
+    <section id="roles" className="py-8 sm:py-10 md:py-12 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
+      {/* Decorative organic green blob matching reference on right side */}
+      <div className="absolute top-1/4 -right-12 w-64 sm:w-80 h-64 sm:h-80 rounded-full bg-[#7be4a2]/40 blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-1/2 -right-8 w-40 sm:w-52 h-40 sm:h-52 rounded-full bg-[#a8e6cf]/50 blur-2xl pointer-events-none -z-10" />
+      
+      {/* Visible fluid SVG shape peeking from the right margin */}
+      <svg
+        className="absolute -right-10 top-1/3 w-36 sm:w-48 h-36 sm:h-48 text-[#6ed898]/60 pointer-events-none -z-10 hidden sm:block"
+        viewBox="0 0 200 200"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M43.7,-63.9C57.3,-54.3,69.5,-42.8,74.4,-28.9C79.3,-15.1,77,1.1,71.2,16.6C65.5,32.1,56.3,46.9,43.5,57.7C30.7,68.4,14.3,75.1,-1.2,76.8C-16.7,78.4,-33.4,75,-47.3,66C-61.2,57,-72.3,42.4,-77.1,26.1C-81.9,9.8,-80.4,-8.2,-73.4,-24.1C-66.4,-40,-53.9,-53.8,-39.8,-63.3C-25.7,-72.7,-10,-77.8,3.9,-82.2C17.8,-86.6,30.1,-73.5,43.7,-63.9Z" transform="translate(100 100)" />
+      </svg>
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-8">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
           <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 tracking-tight">
             How <span className="text-primary-600 font-medium">LYNKFOLK</span> helps
           </h2>
-          <p className="mt-2 text-base sm:text-lg text-grey-500">
+          <p className="mt-2 text-sm sm:text-base text-grey-500">
             Different needs. One connected journey.
           </p>
         </div>

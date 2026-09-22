@@ -60,10 +60,10 @@ export function CTA() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-md px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-white/90 border border-white/20 mb-4"
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-md px-4 py-1 text-xs font-semibold uppercase tracking-widest text-white/90 border border-white/20 mb-4"
             >
               <Sparkles className="h-3 w-3 text-amber-300" />
-              <span>{FINAL_CTA_DATA.badge}</span>
+              <span>READY TO BUILD A STRONGER TOMORROW?</span>
             </motion.div>
 
             {/* Headline */}
@@ -74,8 +74,8 @@ export function CTA() {
               transition={{ duration: 0.5, delay: 0.25 }}
               className="font-serif-heading text-2xl sm:text-3xl lg:text-4xl font-normal text-white tracking-tight leading-[1.18]"
             >
-              Ready to transform your <br className="hidden sm:inline" />
-              family communication?
+              Join thousands of families <br className="hidden sm:inline" />
+              already on the LYNKFOLK journey.
             </motion.h2>
 
             {/* Sub-headline */}
@@ -86,7 +86,7 @@ export function CTA() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="mt-3 text-sm sm:text-base text-white/90 font-normal leading-relaxed max-w-xl"
             >
-              Join thousands of parents and teens building deeper connections, one honest conversation at a time.
+              Download the app today and take the first step towards deeper conversations, stronger connections, and brighter futures.
             </motion.p>
 
             {/* CTAs: Button + Store Badges */}

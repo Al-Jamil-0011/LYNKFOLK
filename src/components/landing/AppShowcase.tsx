@@ -10,93 +10,98 @@ export function AppShowcase() {
   return (
     <section
       id="tools-showcase"
-      className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24"
+      className="py-8 sm:py-10 md:py-14 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24"
     >
       <div id="app-showcase" className="absolute -top-24" />
-      {/* Soft purple and blue ambient brand glow */}
-      <div className="absolute top-1/3 right-10 h-[500px] w-[500px] rounded-full bg-primary-100/30 blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute top-1/2 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-100/40 blur-[100px] pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Copy & Checklist */}
-          <div className="lg:col-span-5">
-            {/* Playful cursive badge */}
-            <div className="inline-flex items-center gap-2 font-handwriting text-2xl text-primary-600 -rotate-3 mb-3">
-              <span>Small Steps Big Changes</span>
-              <span className="text-rose-400 text-xl">♡</span>
+        {/* Full-width framed twilight-to-golden amber sunset container */}
+        <div className="relative rounded-[32px] sm:rounded-[44px] bg-gradient-to-br from-[#160324] via-[#2a0840] to-[#420f34] border border-purple-500/25 p-6 sm:p-10 lg:p-14 overflow-hidden shadow-2xl">
+          
+          {/* Atmospheric Light Flares & Sunset Glows */}
+          <div className="absolute -top-24 -right-24 w-[480px] h-[480px] rounded-full bg-amber-500/15 blur-[130px] pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-[420px] h-[420px] rounded-full bg-secondary-400/15 blur-[120px] pointer-events-none" />
+          <div className="absolute -bottom-20 -left-20 w-[380px] h-[380px] rounded-full bg-primary-500/20 blur-[110px] pointer-events-none" />
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center relative z-10">
+            {/* Left Column: Copy, Checklist & Badges */}
+            <div className="lg:col-span-5">
+              {/* Playful cursive badge */}
+              <div className="inline-flex items-center gap-2 font-handwriting text-2xl sm:text-3xl text-amber-300 -rotate-2 mb-3 drop-shadow-sm">
+                <span>Small Steps Big Changes</span>
+                <span className="text-rose-400 text-xl sm:text-2xl">♡</span>
+              </div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 12 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4 }}
+                className="block mb-4"
+              >
+                <span className="inline-flex items-center rounded-full bg-white/10 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-white/90 border border-white/20">
+                  {APP_SHOWCASE_DATA.badge}
+                </span>
+              </motion.div>
+
+              <motion.h2
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-white leading-[1.15] tracking-tight"
+              >
+                Tools for every <br className="hidden sm:inline" />
+                step of the journey.
+              </motion.h2>
+
+              <motion.p
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mt-4 text-sm sm:text-base leading-relaxed text-white/85"
+              >
+                {APP_SHOWCASE_DATA.description}
+              </motion.p>
+
+              {/* Checklist */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="mt-6 space-y-3"
+              >
+                {APP_SHOWCASE_DATA.features.map((feature) => (
+                  <div key={feature} className="flex items-center gap-3">
+                    <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-400/20 text-emerald-300 border border-emerald-400/30">
+                      <Check className="h-3.5 w-3.5 stroke-[2.5]" />
+                    </div>
+                    <span className="text-sm sm:text-base font-medium text-white/95">
+                      {feature}
+                    </span>
+                  </div>
+                ))}
+              </motion.div>
+
+              {/* App Store & Google Play Store Badges */}
+              <motion.div
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mt-8 pt-5 border-t border-white/15"
+              >
+                <p className="text-xs font-semibold uppercase tracking-wider text-white/70 mb-3">
+                  Download the app for iOS & Android
+                </p>
+                <StoreBadges variant="light" className="gap-3.5" />
+              </motion.div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4 }}
-              className="block mb-4"
-            >
-              <span className="inline-flex items-center rounded-full bg-primary-50 px-3.5 py-1 text-xs font-semibold text-primary-600 border border-primary-100">
-                {APP_SHOWCASE_DATA.badge}
-              </span>
-            </motion.div>
-
-            <motion.h2
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 leading-[1.15] tracking-tight"
-            >
-              Tools for every <br className="hidden sm:inline" />
-              step of the journey.
-            </motion.h2>
-
-            <motion.p
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-4 text-base sm:text-lg leading-relaxed text-grey-600"
-            >
-              {APP_SHOWCASE_DATA.description}
-            </motion.p>
-
-            {/* Checklist */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-6 space-y-3"
-            >
-              {APP_SHOWCASE_DATA.features.map((feature) => (
-                <div key={feature} className="flex items-center gap-3">
-                  <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
-                    <Check className="h-3.5 w-3.5 stroke-[2.5]" />
-                  </div>
-                  <span className="text-sm sm:text-base font-medium text-grey-800">
-                    {feature}
-                  </span>
-                </div>
-              ))}
-            </motion.div>
-
-            {/* App Store & Google Play Store Badges */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 pt-5 border-t border-grey-200/70"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wider text-grey-500 mb-3">
-                Download the app for iOS & Android
-              </p>
-              <StoreBadges className="gap-3.5" />
-            </motion.div>
-          </div>
-
-          {/* Right Column: Fanned/Layered Phone Mockups Stack */}
-          <div className="lg:col-span-7 relative flex justify-center lg:justify-end">
+            {/* Right Column: Fanned/Layered Phone Mockups Stack */}
+            <div className="lg:col-span-7 relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-[660px] h-[580px] flex items-center justify-center">
               {/* Phone 1 (Back Left): Breathing & Mindfulness Exercise */}
               <motion.div
@@ -271,6 +276,7 @@ export function AppShowcase() {
             </div>
           </div>
         </div>
+      </div>
       </div>
     </section>
   );

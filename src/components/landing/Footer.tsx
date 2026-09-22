@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import { NAV_ITEMS } from "@/constants";
 import { Logo } from "@/components/ui/Logo";
-import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function Footer() {
   return (
@@ -28,9 +27,14 @@ export function Footer() {
             ))}
           </nav>
 
-          {/* App Store & Google Play Badges */}
+          {/* Get Started Button */}
           <div>
-            <StoreBadges />
+            <Link
+              href="#get-started"
+              className="inline-flex items-center justify-center rounded-full bg-primary-500 hover:bg-primary-600 px-6 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-sm shadow-primary-500/25 transition-all hover:scale-105 active:scale-95"
+            >
+              <span>Get Started</span>
+            </Link>
           </div>
         </div>
 

@@ -12,13 +12,14 @@ export function Testimonials() {
   const teenTestimonial = TESTIMONIALS_DATA[1];
 
   return (
-    <section id="testimonials" className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
+    <section id="testimonials" className="py-8 sm:py-10 md:py-12 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
       <div id="stories" className="absolute -top-24" />
       {/* Ambient background blur */}
-      <div className="absolute top-1/2 left-10 h-[400px] w-[400px] rounded-full bg-primary-100/30 blur-[130px] pointer-events-none -z-10" />
+      <div className="absolute top-1/2 left-10 h-[400px] w-[400px] rounded-full bg-primary-100/25 blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute bottom-4 right-10 h-[350px] w-[350px] rounded-full bg-[#E8F5E9]/40 blur-[100px] pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           {/* Left Column: Heading, Context, Trust Metric & CTA */}
           <div className="lg:col-span-5 space-y-4">
@@ -29,7 +30,7 @@ export function Testimonials() {
               transition={{ duration: 0.4 }}
               className="inline-flex items-center rounded-full bg-primary-50 px-3.5 py-1 text-xs font-semibold text-primary-600 border border-primary-100"
             >
-              <span>Why Families Choose LYNKFOLK</span>
+              <span>REAL STORIES, LASTING IMPACT</span>
             </motion.div>
 
             <motion.h2
@@ -39,8 +40,8 @@ export function Testimonials() {
               transition={{ duration: 0.5, delay: 0.1 }}
               className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 leading-[1.15] tracking-tight"
             >
-              Real stories from <br />
-              families finding calm.
+              Why Families Choose <br className="hidden sm:inline" />
+              <span className="text-primary-600 font-medium">LYNKFOLK</span>
             </motion.h2>
 
             <motion.p
@@ -48,9 +49,9 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="text-base sm:text-lg leading-relaxed text-grey-600"
+              className="text-sm sm:text-base leading-relaxed text-grey-600"
             >
-              How parents and teens went from tension and closed doors to daily empathy, calm conversations, and genuine shared laughter.
+              Because every family&apos;s journey is unique, LYNKFOLK adapts to your needs &mdash; helping you and your teen feel more connected, more understood, and more supported.
             </motion.p>
 
             {/* Trust Rating pill */}
@@ -59,7 +60,7 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.25 }}
-              className="flex items-center gap-3 pt-2"
+              className="flex items-center gap-3 pt-1"
             >
               <div className="flex text-amber-400">
                 {[...Array(5)].map((_, i) => (
@@ -70,7 +71,7 @@ export function Testimonials() {
                 4.9/5 Rating
               </span>
               <span className="text-xs text-grey-500">
-                · 10,000+ Happy Families
+                &bull; 10,000+ Happy Families
               </span>
             </motion.div>
 
@@ -80,13 +81,13 @@ export function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="pt-4"
+              className="pt-3"
             >
               <Link
-                href="#download"
-                className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary-500/20 hover:bg-primary-600 transition-all hover:scale-105 active:scale-95"
+                href="#get-started"
+                className="inline-flex items-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-primary-500/25 transition-all hover:scale-105 active:scale-95"
               >
-                <span>Start Your Family Journey</span>
+                <span>Start Your Journey</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </motion.div>
