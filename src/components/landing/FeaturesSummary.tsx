@@ -33,13 +33,13 @@ const SUMMARY_ITEMS = [
 
 export function FeaturesSummary() {
   return (
-    <section className="py-16 sm:py-20 bg-[#FAF9F6] relative overflow-hidden">
+    <section id="features" className="py-10 md:py-14 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
       {/* Soft decorative background leaf blob */}
       <div className="absolute top-1/2 right-4 w-72 h-72 rounded-full bg-emerald-100/40 blur-[90px] pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-xl mx-auto mb-12">
+        <div className="text-center max-w-xl mx-auto mb-7">
           <h2 className="font-serif-heading text-3xl sm:text-4xl font-normal text-grey-900 tracking-tight">
             How <span className="text-primary-600 font-medium">LYNKFOLK</span> helps
           </h2>

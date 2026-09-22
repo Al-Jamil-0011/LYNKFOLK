@@ -18,9 +18,10 @@ export function Hero() {
 
   return (
     <section
-      id="home"
-      className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#FAF9F6]"
+      id="hero"
+      className="relative overflow-hidden py-16 sm:py-20 md:py-24 lg:py-28 bg-[#FAF9F6] scroll-mt-24"
     >
+      <div id="home" className="absolute -top-24" />
       {/* Soft organic ambient glow blobs matching reference */}
       <div className="absolute top-12 left-1/4 h-[480px] w-[480px] rounded-full bg-primary-100/30 blur-[110px] pointer-events-none -z-10" />
       <div className="absolute top-24 right-10 h-[500px] w-[500px] rounded-full bg-[#FFE7D1]/40 blur-[120px] pointer-events-none -z-10" />

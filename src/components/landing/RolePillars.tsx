@@ -8,6 +8,7 @@ import { ArrowRight } from "lucide-react";
 const ROLE_PILLARS = [
   {
     id: "teens",
+    anchorId: "for-teens",
     role: "For Teens",
     subtitle: "Private emotional support",
     description: "Feel heard, build confidence — all in a safe space.",
@@ -18,6 +19,7 @@ const ROLE_PILLARS = [
   },
   {
     id: "parents",
+    anchorId: "for-parents",
     role: "For Parents",
     subtitle: "Calm guidance",
     description: "Understand your teen's world, get practical tools, and learn how to support them better.",
@@ -28,6 +30,7 @@ const ROLE_PILLARS = [
   },
   {
     id: "together",
+    anchorId: "together",
     role: "Together",
     subtitle: "Guided conversations",
     description: "Bridge the gap with meaningful conversations and shared activities.",
@@ -40,35 +43,36 @@ const ROLE_PILLARS = [
 
 export function RolePillars() {
   return (
-    <section id="roles" className="py-20 sm:py-24 bg-[#FAF9F6] relative overflow-hidden">
+    <section id="roles" className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
       {/* Decorative organic blob matching reference on right side */}
       <div className="absolute top-1/3 -right-16 w-80 h-80 rounded-[40px] bg-emerald-200/40 blur-[80px] pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 tracking-tight">
             How <span className="text-primary-600 font-medium">LYNKFOLK</span> helps
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-grey-500">
+          <p className="mt-2 text-base sm:text-lg text-grey-500">
             Different needs. One connected journey.
           </p>
         </div>
 
         {/* 3 Large Pastel Tinted Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
           {ROLE_PILLARS.map((item, idx) => (
             <motion.div
               key={item.id}
-              initial={{ opacity: 0, y: 24 }}
+              id={item.anchorId}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: idx * 0.12 }}
-              className={`group flex flex-col justify-between rounded-3xl p-8 border shadow-xs hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 ${item.cardBg}`}
+              className={`group flex flex-col justify-between h-full rounded-3xl p-7 sm:p-8 border shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 scroll-mt-28 ${item.cardBg}`}
             >
               <div>
                 {/* Circular Illustrated Avatar Header */}
-                <div className="relative mx-auto mb-8 h-36 w-36 overflow-hidden rounded-full border-4 border-white shadow-md bg-white">
+                <div className="relative mx-auto mb-6 h-32 w-32 sm:h-36 sm:w-36 overflow-hidden rounded-full border-4 border-white shadow-md bg-white">
                   <Image
                     src={item.image}
                     alt={item.role}
@@ -79,7 +83,7 @@ export function RolePillars() {
                 </div>
 
                 {/* Role Title & Subtitle */}
-                <h3 className="font-serif-heading text-xl sm:text-2xl font-semibold text-grey-900 mb-1.5 text-center">
+                <h3 className="font-serif-heading text-xl sm:text-2xl font-semibold text-grey-900 mb-1 text-center">
                   {item.role}
                 </h3>
                 <h4 className="text-sm font-semibold text-grey-800 mb-3 text-center">

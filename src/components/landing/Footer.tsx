@@ -6,10 +6,10 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function Footer() {
   return (
-    <footer className="border-t border-grey-200/80 bg-[#FAF9F6] py-12 sm:py-16">
+    <footer className="border-t border-grey-200/80 bg-[#FAF9F6] py-10 md:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Footer Row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 pb-12 border-b border-grey-200/70">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-grey-200/70">
           {/* Brand Logo */}
           <div className="flex flex-col items-center md:items-start">
             <Logo />
@@ -35,7 +35,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Row: Copyright & Social Icons */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-grey-400">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-grey-400">
           <p>&copy; {new Date().getFullYear()} LYNKFOLK. All rights reserved.</p>
 
           {/* Social Icons */}

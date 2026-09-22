@@ -20,13 +20,7 @@ export function Navbar() {
 
         {/* Desktop Navigation Links */}
         <nav className="hidden md:flex items-center gap-8">
-          {[
-            { label: "Home", href: "#home" },
-            { label: "How It Works", href: "#how-it-works" },
-            { label: "For Parents", href: "#for-parents" },
-            { label: "For Teens", href: "#for-teens" },
-            { label: "Resources", href: "#features" },
-          ].map((item) => {
+          {NAV_ITEMS.map((item) => {
             const isActive = activeItem === item.label;
             return (
               <Link
@@ -92,20 +86,11 @@ export function Navbar() {
             ))}
             <div className="pt-3">
               <Link
-                href="#app-showcase"
-                onClick={(e) => {
-                  e.preventDefault();
-                  setMobileMenuOpen(false);
-                  const el = document.getElementById("app-showcase");
-                  if (el) {
-                    el.scrollIntoView({ behavior: "smooth" });
-                  } else {
-                    window.location.hash = "app-showcase";
-                  }
-                }}
+                href="#get-started"
+                onClick={() => setMobileMenuOpen(false)}
                 className="flex items-center justify-center gap-2 w-full rounded-full bg-primary-500 py-3 text-sm font-semibold text-white shadow-md hover:bg-primary-600 transition-colors"
               >
-                <span>Download Now</span>
+                <span>Get Started</span>
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

@@ -12,15 +12,16 @@ export function Testimonials() {
   const teenTestimonial = TESTIMONIALS_DATA[1];
 
   return (
-    <section id="testimonials" className="py-24 sm:py-32 bg-[#FAF9F6] relative overflow-hidden">
+    <section id="testimonials" className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
+      <div id="stories" className="absolute -top-24" />
       {/* Ambient background blur */}
       <div className="absolute top-1/2 left-10 h-[400px] w-[400px] rounded-full bg-primary-100/30 blur-[130px] pointer-events-none -z-10" />
 
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-center">
           
           {/* Left Column: Heading, Context, Trust Metric & CTA */}
-          <div className="lg:col-span-5 space-y-6">
+          <div className="lg:col-span-5 space-y-4">
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}

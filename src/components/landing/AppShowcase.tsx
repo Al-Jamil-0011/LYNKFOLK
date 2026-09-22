@@ -9,9 +9,10 @@ import { StoreBadges } from "@/components/ui/StoreBadges";
 export function AppShowcase() {
   return (
     <section
-      id="app-showcase"
-      className="py-24 md:py-32 bg-[#FAF9F6] relative overflow-hidden scroll-mt-20"
+      id="tools-showcase"
+      className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24"
     >
+      <div id="app-showcase" className="absolute -top-24" />
       {/* Soft purple and blue ambient brand glow */}
       <div className="absolute top-1/3 right-10 h-[500px] w-[500px] rounded-full bg-primary-100/30 blur-[120px] pointer-events-none -z-10" />
       <div className="absolute top-1/2 right-1/4 h-[400px] w-[400px] rounded-full bg-secondary-100/40 blur-[100px] pointer-events-none -z-10" />
@@ -54,7 +55,7 @@ export function AppShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.2 }}
-              className="mt-6 text-base sm:text-lg leading-relaxed text-grey-600"
+              className="mt-4 text-base sm:text-lg leading-relaxed text-grey-600"
             >
               {APP_SHOWCASE_DATA.description}
             </motion.p>
@@ -65,7 +66,7 @@ export function AppShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-8 space-y-4"
+              className="mt-6 space-y-3"
             >
               {APP_SHOWCASE_DATA.features.map((feature) => (
                 <div key={feature} className="flex items-center gap-3">
@@ -85,7 +86,7 @@ export function AppShowcase() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-10 pt-6 border-t border-grey-100"
+              className="mt-8 pt-5 border-t border-grey-200/70"
             >
               <p className="text-xs font-semibold uppercase tracking-wider text-grey-500 mb-3">
                 Download the app for iOS & Android

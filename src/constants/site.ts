@@ -29,11 +29,11 @@ export const SITE_CONFIG = {
 };
 
 export const NAV_ITEMS: NavItem[] = [
-  { label: "Home", href: "#home" },
+  { label: "Home", href: "#hero" },
   { label: "How It Works", href: "#how-it-works" },
-  { label: "Features", href: "#features" },
   { label: "For Parents", href: "#for-parents" },
   { label: "For Teens", href: "#for-teens" },
+  { label: "Resources", href: "#tools-showcase" },
 ];
 
 export const HERO_DATA = {

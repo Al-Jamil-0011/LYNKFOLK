@@ -12,17 +12,18 @@ export function CTA() {
   return (
     <section
       id="get-started"
-      className="py-16 sm:py-24 bg-[#FAF9F6] relative overflow-hidden"
+      className="py-10 md:py-14 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24"
     >
+      <div id="download" className="absolute -top-24" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         
         {/* Scenic Container with Sunset Family Silhouette */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="relative rounded-3xl sm:rounded-[44px] overflow-hidden min-h-[480px] sm:min-h-[540px] flex items-center justify-center p-8 sm:p-14 lg:p-20 text-center shadow-2xl border-4 border-white"
+          transition={{ duration: 0.6 }}
+          className="relative rounded-3xl sm:rounded-[36px] overflow-hidden min-h-[400px] sm:min-h-[450px] flex items-center justify-center p-6 sm:p-10 lg:p-12 text-center shadow-xl border-4 border-white"
         >
           {/* Background Sunset Family Silhouette Image */}
           <Image
@@ -39,15 +40,15 @@ export function CTA() {
           <div className="absolute inset-0 bg-radial from-transparent via-[#200533]/40 to-[#12021a]/90 pointer-events-none" />
 
           {/* Content Layer */}
-          <div className="relative z-10 mx-auto max-w-3xl flex flex-col items-center">
+          <div className="relative z-10 mx-auto max-w-2xl flex flex-col items-center">
             
             {/* Rotated Handwriting Script Badge */}
             <motion.div
               initial={{ opacity: 0, rotate: -8, scale: 0.9 }}
               whileInView={{ opacity: 1, rotate: -4, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-              className="inline-flex items-center gap-2 font-handwriting text-2xl sm:text-3xl text-amber-300 drop-shadow-md mb-3"
+              transition={{ duration: 0.4, delay: 0.15 }}
+              className="inline-flex items-center gap-1.5 font-handwriting text-2xl sm:text-3xl text-amber-300 drop-shadow-md mb-2"
             >
               <span>Because they matter</span>
               <span className="text-rose-400 text-xl sm:text-2xl">♡</span>
@@ -55,11 +56,11 @@ export function CTA() {
 
             {/* Pill Eyebrow */}
             <motion.div
-              initial={{ opacity: 0, y: 12 }}
+              initial={{ opacity: 0, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: 0.25 }}
-              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-md px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white/90 border border-white/20 mb-6"
+              transition={{ duration: 0.4, delay: 0.2 }}
+              className="inline-flex items-center gap-1.5 rounded-full bg-white/10 backdrop-blur-md px-3.5 py-1 text-xs font-semibold uppercase tracking-widest text-white/90 border border-white/20 mb-4"
             >
               <Sparkles className="h-3 w-3 text-amber-300" />
               <span>{FINAL_CTA_DATA.badge}</span>
@@ -67,11 +68,11 @@ export function CTA() {
 
             {/* Headline */}
             <motion.h2
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-white tracking-tight leading-[1.18]"
+              transition={{ duration: 0.5, delay: 0.25 }}
+              className="font-serif-heading text-2xl sm:text-3xl lg:text-4xl font-normal text-white tracking-tight leading-[1.18]"
             >
               Ready to transform your <br className="hidden sm:inline" />
               family communication?
@@ -79,36 +80,36 @@ export function CTA() {
 
             {/* Sub-headline */}
             <motion.p
-              initial={{ opacity: 0, y: 16 }}
+              initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.35 }}
-              className="mt-4 text-base sm:text-lg text-white/90 font-normal leading-relaxed max-w-2xl"
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mt-3 text-sm sm:text-base text-white/90 font-normal leading-relaxed max-w-xl"
             >
               Join thousands of parents and teens building deeper connections, one honest conversation at a time.
             </motion.p>
 
             {/* CTAs: Button + Store Badges */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.4 }}
-              className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6"
+              transition={{ duration: 0.5, delay: 0.35 }}
+              className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5"
             >
               <Link
                 href="#download"
-                className="inline-flex items-center justify-center gap-2.5 rounded-full bg-primary-500 px-8 py-3.5 text-base font-semibold text-white shadow-xl shadow-primary-500/40 hover:bg-primary-600 transition-all hover:scale-105 active:scale-95 border border-primary-400/40"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-7 py-3 text-sm font-semibold text-white shadow-xl shadow-primary-500/40 hover:bg-primary-600 transition-all hover:scale-105 active:scale-95 border border-primary-400/40"
               >
                 <span>{FINAL_CTA_DATA.buttonText}</span>
-                <ArrowRight className="h-5 w-5" />
+                <ArrowRight className="h-4 w-4" />
               </Link>
 
               <StoreBadges variant="light" className="justify-center" />
             </motion.div>
 
             {/* Trust Micro-Text */}
-            <p className="mt-6 text-xs text-white/60 font-medium">
+            <p className="mt-4 text-[11px] text-white/60 font-medium">
               Free 14-day trial · No credit card required · End-to-end encrypted
             </p>
 

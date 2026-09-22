@@ -34,23 +34,23 @@ const STEPS = [
 
 export function HowItWorks() {
   return (
-    <section id="how-it-works" className="py-20 sm:py-24 bg-[#FAF9F6] relative overflow-hidden">
+    <section id="how-it-works" className="py-12 md:py-16 bg-[#FAF9F6] relative overflow-hidden scroll-mt-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Heading, Description & Action */}
           <div className="lg:col-span-4 flex flex-col items-start text-left">
-            <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary-600 bg-primary-50 px-3.5 py-1 rounded-full border border-primary-100 mb-4">
+            <span className="inline-block text-xs font-bold uppercase tracking-widest text-primary-600 bg-primary-50 px-3.5 py-1 rounded-full border border-primary-100 mb-3">
               HOW IT WORKS
             </span>
             <h2 className="font-serif-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-grey-900 tracking-tight leading-[1.15]">
               How It Works
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-grey-600">
+            <p className="mt-3 text-base leading-relaxed text-grey-600">
               LYNKFOLK guides you through a structured routine with personalized support, tools, and meaningful conversations.
             </p>
-            <div className="mt-6">
+            <div className="mt-5">
               <Link
-                href="#features"
+                href="#tools-showcase"
                 className="inline-flex items-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-6 py-2.5 text-sm font-semibold text-white shadow-md shadow-primary-500/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
               >
                 <span>Learn more</span>
