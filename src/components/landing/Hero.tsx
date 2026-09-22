@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 import {
   Shield,
@@ -9,9 +10,9 @@ import {
   ArrowRight,
   MessageCircle,
   CheckCircle2,
+  Star,
 } from "lucide-react";
 import { HERO_DATA } from "@/constants";
-import { StoreBadges } from "@/components/ui/StoreBadges";
 
 export function Hero() {
   const [selectedMood, setSelectedMood] = useState<number>(0);
@@ -72,23 +73,89 @@ export function Hero() {
               {HERO_DATA.description}
             </p>
 
-            {/* App Store & Google Play Badges directly below copy as in reference */}
-            <div className="mt-8">
-              <StoreBadges className="gap-3.5" />
+            {/* Action Buttons: "Start Your Family Space" + "How It Works" */}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link
+                href="#get-started"
+                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 hover:bg-primary-600 px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white shadow-lg shadow-primary-500/25 hover:shadow-xl hover:shadow-primary-500/35 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              >
+                <span>Start Your Family Space</span>
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+
+              <Link
+                href="#how-it-works"
+                className="inline-flex items-center justify-center rounded-full bg-[#F3EAFD]/70 hover:bg-[#F3EAFD] border border-primary-200/80 px-7 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-primary-600 hover:text-primary-700 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              >
+                <span>How It Works</span>
+              </Link>
             </div>
 
-            {/* Privacy Trust Card under store buttons */}
-            <div className="mt-6 inline-flex items-center gap-3 rounded-2xl bg-[#E8F5E9]/70 border border-emerald-100/80 px-4 py-2.5 shadow-2xs">
-              <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-white text-emerald-600 shadow-xs">
-                <Shield className="h-4 w-4" />
+            {/* Social Proof & Trust Divider Row */}
+            <div className="mt-8 pt-6 border-t border-grey-200/70 w-full flex flex-wrap items-center gap-6 sm:gap-8">
+              {/* Rating & Connected Families with Overlapping Avatars */}
+              <div className="flex items-center gap-3">
+                <div className="flex -space-x-2 overflow-hidden">
+                  <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-white overflow-hidden shadow-2xs bg-grey-100">
+                    <Image
+                      src="/images/avatar-parent.jpg"
+                      alt="Parent user"
+                      fill
+                      className="object-cover"
+                      sizes="32px"
+                    />
+                  </div>
+                  <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-white overflow-hidden shadow-2xs bg-grey-100">
+                    <Image
+                      src="/images/avatar-teen.jpg"
+                      alt="Teen user"
+                      fill
+                      className="object-cover"
+                      sizes="32px"
+                    />
+                  </div>
+                  <div className="relative inline-block h-8 w-8 rounded-full ring-2 ring-white overflow-hidden shadow-2xs bg-grey-100">
+                    <Image
+                      src="/images/avatar-together.jpg"
+                      alt="Connected family"
+                      fill
+                      className="object-cover"
+                      sizes="32px"
+                    />
+                  </div>
+                </div>
+
+                <div className="flex flex-col text-left">
+                  <div className="flex items-center gap-1.5">
+                    <div className="flex text-amber-400">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3 w-3 fill-amber-400" />
+                      ))}
+                    </div>
+                    <span className="text-xs font-bold text-grey-900">4.9/5</span>
+                  </div>
+                  <span className="text-[11px] text-grey-500 font-medium">
+                    2,400+ families connected
+                  </span>
+                </div>
               </div>
-              <div className="flex flex-col text-left">
-                <span className="text-xs font-bold text-emerald-950">
-                  {HERO_DATA.privacyNotice.title}
-                </span>
-                <span className="text-[11px] font-medium text-emerald-700">
-                  {HERO_DATA.privacyNotice.subtitle}
-                </span>
+
+              {/* Vertical divider */}
+              <div className="hidden sm:block h-8 w-px bg-grey-200" />
+
+              {/* Private by Default Block */}
+              <div className="flex items-center gap-2.5">
+                <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-sky-50 text-sky-500 border border-sky-100/80 shadow-2xs">
+                  <Shield className="h-4 w-4 stroke-[2.2]" />
+                </div>
+                <div className="flex flex-col text-left">
+                  <span className="text-xs font-bold text-grey-900 leading-tight">
+                    Private by Default
+                  </span>
+                  <span className="text-[11px] text-grey-500 leading-tight mt-0.5">
+                    Zero data sold &bull; End-to-end encrypted
+                  </span>
+                </div>
               </div>
             </div>
           </div>
