@@ -16,7 +16,7 @@ export function CTA() {
     >
       <div id="download" className="absolute -top-24" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        
+
         {/* Scenic Container with Sunset Family Silhouette */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -41,7 +41,7 @@ export function CTA() {
 
           {/* Content Layer */}
           <div className="relative z-10 mx-auto max-w-2xl flex flex-col items-center">
-            
+
             {/* Rotated Handwriting Script Badge */}
             <motion.div
               initial={{ opacity: 0, rotate: -8, scale: 0.9 }}
@@ -97,14 +97,6 @@ export function CTA() {
               transition={{ duration: 0.5, delay: 0.35 }}
               className="mt-6 sm:mt-7 flex flex-col sm:flex-row items-center justify-center gap-3.5 sm:gap-5"
             >
-              <Link
-                href="#download"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-primary-500 px-7 py-3 text-sm font-semibold text-white shadow-xl shadow-primary-500/40 hover:bg-primary-600 transition-all hover:scale-105 active:scale-95 border border-primary-400/40"
-              >
-                <span>{FINAL_CTA_DATA.buttonText}</span>
-                <ArrowRight className="h-4 w-4" />
-              </Link>
-
               <StoreBadges variant="light" className="justify-center" />
             </motion.div>
 

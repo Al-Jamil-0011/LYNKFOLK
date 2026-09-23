@@ -238,5 +238,5 @@ export const FINAL_CTA_DATA = {
   badge: "READY TO BUILD A STRONGER TOMORROW?",
   title: "Join thousands of families already on the LYNKFOLK journey.",
   subtitle: "Better conversations. Healthier minds. Stronger connections.",
-  buttonText: "Get Started",
 };
+
